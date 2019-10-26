@@ -110,7 +110,7 @@ def create_matlab_call(path):
     for i in filedict.keys():
         function_call="bash_fed_fileiteration(\'{}\',\'{}\')\"".format(filedict[i][1], filedict[i][0])
                
-        matlab_call= '/opt/local/MATLAB/R2016b/bin/matlab -nodisplay -nosplash -nodesktop -noFigureWindows -r \"addpath(genpath(\'/home/mheydasch/Scripts/neuritetracker-master/trunk\'));  {}'.format(function_call)
+        matlab_call= '/opt/local/MATLAB/R2016b/bin/matlab -nodisplay -nosplash -nodesktop -noFigureWindows -r \"addpath(genpath(\'/home/mheydasch/Scripts/neuritetracker-master/trunk1\'));  {}'.format(function_call)
         calls.append(matlab_call)
     return calls
 
