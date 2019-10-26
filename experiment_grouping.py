@@ -156,9 +156,18 @@ lineplot(z_scores, 'corrected_length', wells)
 figure1, art1 = lineplot(z_scores, 'length/neurites', RAC_m+['Ctrl'], 'Rac')
 figure2, art2 =lineplot(z_scores, 'length/neurites', RHOA_m+['Ctrl'], 'RhoA')
 figure3, art3 =lineplot(z_scores, 'length/neurites', CDC42_m+['Ctrl'], 'CDC42')
+#%%
 #% saving figures
 figure1.savefig('{}Rac_affectors.png'.format(path), additional_artists=art1, bbox_inches='tight', dpi=500)
 figure2.savefig('{}RhoA_affectors.png'.format(path), additional_artists=art2, bbox_inches='tight', dpi=500)
 figure3.savefig('{}CDC42_affectors.png'.format(path), additional_artists=art3, bbox_inches='tight', dpi=500)
+#%% n branch figures
+figure3, art3 = lineplot(z_scores, 'n_branch', RAC_m+['Ctrl'], 'Rac')
+figure4, art4 =lineplot(z_scores, 'n_branch', RHOA_m+['Ctrl'], 'RhoA')
+figure5, art5 =lineplot(z_scores, 'n_branch', CDC42_m+['Ctrl'], 'CDC42')
+#% saving figures
+figure3.savefig('{}Rac_branch.png'.format(path), additional_artists=art3, bbox_inches='tight', dpi=500)
+figure4.savefig('{}RhoA_branch.png'.format(path), additional_artists=art4, bbox_inches='tight', dpi=500)
+figure5.savefig('{}CDC42_branch.png'.format(path), additional_artists=art5, bbox_inches='tight', dpi=500)
 
    
