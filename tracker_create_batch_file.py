@@ -108,7 +108,7 @@ def create_matlab_call(path):
     filedict=get_folders(path)
     calls=[]
     for i in filedict.keys():
-        function_call="bash_fed_fileiteration(\'{}\',\'{}\')".format(filedict[i][1], filedict[i][0])
+        function_call="bash_fed_fileiteration(\'{}\',\'{}\')\"".format(filedict[i][1], filedict[i][0])
                
         matlab_call= '/opt/local/MATLAB/R2016b/bin/matlab -nodisplay -nosplash -nodesktop -noFigureWindows -r \"addpath(genpath(\'/home/mheydasch/Scripts/neuritetracker-master/trunk\'));  {}'.format(function_call)
         calls.append(matlab_call)
