@@ -81,7 +81,7 @@ def get_folders(path):
     filelist=[f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
     for file in filelist:
         if re.search(nucleus_pattern, file) !=None:
-            print(file)
+            #print(file)
             basestring=file.replace(re.search(nucleus_pattern, file).group(), '')
             if basestring in imagegroups:
                 imagegroups[basestring]=[imagegroups[basestring], os.path.join(path,file)]
@@ -108,7 +108,7 @@ def create_matlab_call(path):
     filedict=get_folders(path)
     calls=[]
     for i in filedict.keys():
-        function_call="bash_fed_fileiteration({},{})".format(i[1], i[0])
+        function_call="bash_fed_fileiteration({},{})".format(filedict[i][1], filedict[i][0])
                
         matlab_call= '/opt/local/MATLAB/R2016b/bin/matlab -nodisplay -nosplash -nodesktop -noFigureWindows -r \"addpath(genpath(\'/home/mheydasch/Scripts/neuritetracker-master/trunk\'));  {}'.format(function_call)
         calls.append(matlab_call)
